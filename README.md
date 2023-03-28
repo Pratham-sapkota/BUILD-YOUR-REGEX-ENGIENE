@@ -18,18 +18,16 @@ alert( "We will, we will".replace(/we/ig, "I") ); // I will, I will```
 
 ````
 
-Our regex engine will support the following syntax:
+| Syntax | Meaning                               | Example | Matches |
+| ------ | ------------------------------------- | ------- | ------- |
+| a      | Match the specified character literal | q       | q       |
 
-## | Syntax | Meaning | Example | Matches |
+| _ | Matches 0 or more of the previous character | a_ | "", a, aa, aaa |
 
-## | a | Match the specified character literal | q | q |
+| ? | Matches 0 or 1 of the previous character | a? | "", a |
 
-## | _ | Matches 0 or more of the previous character | a_ | "", a, aa, aaa |
+| . | Matches any character literal | . | a, b, c, d, e ... |
 
-## | ? | Matches 0 or 1 of the previous character | a? | "", a |
+| ^ | Matches the start of a string | ^c | c, ca, caa, cbb ... |
 
-## | . | Matches any character literal | . | a, b, c, d, e ... |
-
-## | ^ | Matches the start of a string | ^c | c, ca, caa, cbb ... |
-
-## | $ | Matches the end of a string | a$ | ba, baaa, qwerta ... |
+| $ | Matches the end of a string | a$ | ba, baaa, qwerta ... |
