@@ -44,11 +44,13 @@ which returns boolean value. At first we see whether we have patterns or not. If
 
 ```
 For Example:
-``matchOnw("c.e","cde");`` //returns true
+matchOnw("c.e","cde");  //returns true
 
 ```
 
 ### Matching Same Length Strings
 
-In this step we want to add support for pattern and text of greater lengths. In this step we take characters of same length . For this step we define a function `match(pattern,text)` where we call the `matchOne(pattern[0],text[0])` repeatedly and also call itself rescursively. Here
-`matchOne(pattern[0], text[0]) && match(pattern.slice(1), text.slice(1))` , `matchOne(pattern[0], text[0])` checks calls the "matchOne" function and hence compares the 1st character of both pattern and text and then the `match(pattern.slice(1), text.slice(1))` is the point where the function calls itself and send the character starting from position of index one. The above code advances character by character across the the pattern/text pair. It first compares `pattern[0]` to `text[0]` and then `pattern[1]` to `text[1]` and continues comparing `pattern[i] to text[i]` until `i === pattern.length - 1`. If they ever don't match, then we know that the pattern cannot match the text.
+The `match` function is a recursive function that takes in two arguments: `pattern` and `text`. The function checks whether the `pattern` matches the `text` by comparing each character in the `pattern` to the corresponding character in the `text`.
+If the `pattern` is an empty string, the function returns `true` because an empty pattern matches any string.
+If the `pattern` is not an empty string, the function compares the first character in the pattern to the first character in the text using the `matchOne `function. If the characters match, the function recursively calls itself with the remaining pattern and text by slicing the first character off of each string. If the characters do not match, the function returns `false`.
+The `match` function continues this process until the pattern is an empty string or the characters in the `pattern` and `text` do not match, at which point the function returns `false`.
