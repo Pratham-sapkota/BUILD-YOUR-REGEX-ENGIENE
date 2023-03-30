@@ -18,3 +18,18 @@ function match(pattern,text){
     );
 }
 
+
+function search(pattern,text){
+    // $ matches the last of the string so , if the pattern has $ at last then it checks for the last element in the text
+    if(pattern[1]==="$"){
+        let textLength=text.length;
+        return match(pattern[0],text[textLength-1])
+    }
+    if(pattern[0]==="^"){
+       return match(pattern.slice(1),text) 
+    }
+}
+
+console.log(search(".$","aa"))
+
+

@@ -39,12 +39,12 @@ Our regex engine will support the following syntax:
 
 ### Matching One Character
 
-This is the first step where we compare one pattern character and one text character. We have created a function named `matchOne(pattern,text)`
-which returns boolean value. At first we see whether we have patterns or not. If the pattern is empty then the function returns true as there is no pattern to compare to. But if the text is empty then it returns false. Anything that compares with "." returns true as (.) is a wild card character.
+This is the first step where we compare one `pattern` character and one `text` character. We have created a function named `matchOne(pattern,text)`
+which returns boolean value. At first we see if `pattern` is not empty. If the `pattern` is empty then the function returns `true` as there is no `pattern` to compare to. But if the `text` is empty then it returns `false`. Anything that compares with "." returns `true` as (.) is a wild card character.
 
 ```
 For Example:
-matchOnw("c.e","cde");  //returns true
+matchOne("c.e","cde");  //returns true
 
 ```
 
