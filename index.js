@@ -25,11 +25,19 @@ function search(pattern,text){
         let textLength=text.length;
         return match(pattern[0],text[textLength-1])
     }
+    // ^ matches the begining of string , so if the pattern has ^ at the begining then it checks for the first element in the text.
     if(pattern[0]==="^"){
        return match(pattern.slice(1),text) 
+    }else{
+        return text.split("").some((_,index)=>{
+            //here "_" is used as a placeholder for a parameter that is not needed or used within the function body.
+            //The purpose of using _ as a parameter name is to indicate that the value of the parameter is not important or relevant to the function's operation.
+            //if we console.log(_) then it return the value of the elements in the index , whcih we dont need so we use "_" to show that this parameter is not required for us.
+            console.log(match(pattern,text.slice(index)))
+            return match(pattern,text.slice(index))
+        })
     }
 }
 
-console.log(search(".$","aa"))
-
+console.log(search("bc","aaabcd"))
 
